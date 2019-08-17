@@ -6,7 +6,7 @@ from PyQt5.QtGui import QIcon, QPixmap, QImage, QPalette
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PIL import Image, ImageQt
-import FiltroBlancoyNegro
+import filtroBlancoyNegro
 import filtroColores
 import filtroAltoContraste
 
@@ -87,7 +87,7 @@ class App(QMainWindow):
         valor = int(self.sliderFiltro.value())
         #Seleccionamos el filtro adecuado.
         if (filtro == "Blanco Y Negro"):
-            imagen = FiltroBlancoyNegro.blancoYNegro(self.nombreArch)
+            imagen = filtroBlancoYNegro.blancoYNegro(self.nombreArch)
         if (filtro == "Rojo"):
             imagen = filtroColores.filtroRojo(self.nombreArch)
         if (filtro == "Verde"):
