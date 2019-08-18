@@ -50,6 +50,10 @@ class App(QMainWindow):
         self.imageLabel.setScaledContents(True)
         self.imageLabel.setText("Abre una imágen para aplicar un filtro")
         self.imageLabel.setFrameShape(QFrame.StyledPanel)
+        
+        #Imágen de prueba
+        self.imageLabel.setPixmap(QPixmap.fromImage(QImage("test.jpg")))
+        self.nombreArch = "test.jpg"
 
         #Para mostrar la imágen con el filtro aplicado.
         self.imageFiltro = QtWidgets.QLabel(self.centralwidget)
