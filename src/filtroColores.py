@@ -1,7 +1,12 @@
 from PIL import Image
 import os
 
-# Filtro rojo.
+'''
+Filtro rojo:
+Obtenemos el valor del canal rojo y simplemente
+lo vamos agregando a cada pixel hasta terminar la
+imágen.
+'''
 def filtroRojo(imagen):
 	imagen = Image.open(imagen)
 	datas = imagen.getdata()
@@ -15,7 +20,12 @@ def filtroRojo(imagen):
 	imagen.putdata(pixelesNuevos)
 	return imagen
 
-# Filtro verde.
+'''
+Filtro verde:
+Obtenemos el valor del canal verde y simplemente
+lo vamos agregando a cada pixel hasta terminar la
+imágen.
+'''
 def filtroVerde(imagen):
 	imagen = Image.open(imagen)
 	datas = imagen.getdata()
@@ -29,7 +39,12 @@ def filtroVerde(imagen):
 	imagen.putdata(pixelesNuevos)
 	return imagen
 
-# Filtro azul.
+'''
+Filtro azul:
+Obtenemos el valor del canal azul y simplemente
+lo vamos agregando a cada pixel hasta terminar la
+imágen.
+'''
 def filtroAzul(imagen):
 	imagen = Image.open(imagen)
 	datas = imagen.getdata()
