@@ -1,7 +1,11 @@
 from PIL import Image
 import os
 
-#Filtro de Alto Contraste.
+'''
+Filtro de Alto Contraste:
+Cambia el valor a negro si el promedio entre rojo verde y azul
+de cada pixel es mayor a 127, blanco en otro caso.
+'''
 def altoContraste(imagen):
 	imagen = Image.open(imagen)
 	datas = imagen.getdata()
@@ -22,7 +26,11 @@ def altoContraste(imagen):
 
 	return imagen
 
-#Filtro de Inverso.
+'''
+Filtro de Inverso:
+Cambia el valor a negro si el promedio entre rojo verde y azul
+de cada pixel es menor a 127, blanco en otro caso.
+'''
 def inverso(imagen):
 	imagen = Image.open(imagen)
 	datas = imagen.getdata()
@@ -43,7 +51,12 @@ def inverso(imagen):
 
 	return imagen
 
-#Filtro Mosaico
+'''
+Filtro Mosaico:
+Obtiene el promedio de una determinada sección, dependiendo del
+tamaño del mosaico que queremos y lo aplica a toda la sección
+dando así la impresión de que la imágen se "pixelea".
+'''
 def mosaico(imagen, numeroDeMosaicos):
 	imagen = Image.open(imagen)
 	datas = imagen.getdata()
@@ -98,8 +111,13 @@ def mosaico(imagen, numeroDeMosaicos):
 		y = 0;
 
 	return imagen
-
-#Filtro de brillo.
+	
+'''
+Filtro de brillo:
+Sumamos el factor de brillo que recibe la función para así
+dar el efecto de brillo, si el factor es mayor a 255 o menor a cero
+lo ajustamos para obtener valores dentro del rango [0,255].
+'''
 def brillo(imagen, factor):
 	imagen = Image.open(imagen)
 	width, height = imagen.size
